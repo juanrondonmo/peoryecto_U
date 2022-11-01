@@ -1,6 +1,11 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import styles from './authForm.module.css'
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../../firebase/index';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from "react-redux";
+import styles from './authForm.module.css';
+import { allowAccess } from '../../redux/userSlice';
 
 export const Login = ({switchForm, setSwitchForm}) => {
 
@@ -10,8 +15,8 @@ export const Login = ({switchForm, setSwitchForm}) => {
 })
   const [loginError, setLoginError] = useState(false)
   const { email, password } = userLogin
-  // const dispatch = useAppDispatch()
-  // const navigate = useNavigate()
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
 
 
   const handleInputChange = (e) => {
@@ -21,8 +26,10 @@ export const Login = ({switchForm, setSwitchForm}) => {
   const handleSubmit = async(e) => {
     e.preventDefault()
     try {
-      // dispatch(allowAccess(user.displayName))
-      // navigate("/home")
+      const { user } = await signInWithEmailAndPassword(auth, email, password)
+      console.log("user", user)
+      dispatch(allowAccess(user.displayName))
+      navigate("/home")
       // dispatch(handleModal())
     } catch (error) {
       console.log(error)

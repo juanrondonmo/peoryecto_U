@@ -1,5 +1,7 @@
 import React, {  useState } from 'react'
 // import { useNavigate } from 'react-router-dom';
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth"
+import { auth } from '../../firebase/index';
 import { Link } from 'react-router-dom'
 import styles from './authForm.module.css'
 
@@ -22,8 +24,10 @@ export const Register = ({switchForm, setSwitchForm}) => {
     const handleSubmit = async(e) => {
         e.preventDefault()
        try {
-            
-           
+            const { user } = await createUserWithEmailAndPassword(auth, email, password)
+            updateProfile(user,{
+                displayName:name
+            })
             // navigate("/home")
             // dispatch(handleModal())
             // dispatch(allowAccess(user.displayName))
