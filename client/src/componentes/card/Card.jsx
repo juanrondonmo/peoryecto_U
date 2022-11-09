@@ -11,7 +11,7 @@ img
 
     
   return (
-    <Link to={`/home/${id}`}>
+    <Link to={`/home/${id}`} className="link">
         <div className='movie-card'>
             <h1>{ title }</h1>
             <h4>{ year }</h4>

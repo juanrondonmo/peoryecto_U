@@ -7,7 +7,7 @@ import { Register } from '../componentes/login/Register'
 
 export const AppRouter = () => {
   return (
-    <div>
+    <div style={{width:"100%", display:"flex", justifyContent:"center", alignItems:"center"}}>
         <Routes>
             <Route path='/' element={<Login />} />
             <Route path='/register' element={ <Register /> } />

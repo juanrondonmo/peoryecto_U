@@ -63,7 +63,7 @@ export const Login = ({switchForm, setSwitchForm}) => {
             </div>
             <button type='submit' className={styles.form__button}>Submit</button>
             <Link to="/register">
-              <p style={{textDecoration:"underline", textAlign:"center", cursor:"pointer"}}>Create an account</p>
+              <p style={{textDecoration:"underline", textAlign:"center", cursor:"pointer", color:"white"}}>Create an account</p>
             </Link>
         </form>
   )

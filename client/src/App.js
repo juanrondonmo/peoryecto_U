@@ -20,8 +20,6 @@ function App() {
 
   return (
     <div className="app_container">
-      {/* <Login /> */}
-      {/* <Register /> */}
       <AppRouter />
     </div>
   );

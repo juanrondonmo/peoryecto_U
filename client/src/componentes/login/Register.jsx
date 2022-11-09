@@ -100,7 +100,7 @@ export const Register = ({switchForm, setSwitchForm}) => {
             <button type='submit' className={styles.form__button}>Submit</button>
             
             <Link to="/">
-                <p style={{textDecoration:"underline", textAlign:"center", cursor:"pointer"}}>Have an account already?</p>
+                <p style={{textDecoration:"underline", textAlign:"center", cursor:"pointer", color:"white"}}>Have an account already?</p>
             </Link>
         </form>
   )

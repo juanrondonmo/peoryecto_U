@@ -1,9 +1,19 @@
 
 .movie-card{
+    color: white;
     text-align: center;
 }
 
+.movie-card h1{
+    font-size: 28px;
+}
 
 .movie-card h4{
+    font-weight: 400;
     margin-bottom: 15px;
+}
+
+.link{
+    text-decoration: none;
+
 }
