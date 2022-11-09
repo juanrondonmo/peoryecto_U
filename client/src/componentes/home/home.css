@@ -1,0 +1,17 @@
+
+.cards-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 80px;
+    margin-top: 50px;
+}
+
+.movies-title{
+    color: rgb(255, 255, 255);
+    letter-spacing: 5px;
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 62px;
+    margin: 50px 0;
+    text-align: center;
+
+}

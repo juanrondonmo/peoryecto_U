@@ -1,30 +1,26 @@
 import React from 'react'
-import { useEffect } from 'react'
-import { useDispatch, useSelector } from "react-redux"
-import { loadMovies } from '../../redux/userSlice';
+import { useSelector } from "react-redux"
+import { Card } from '../card/Card';
+
+import "./home.css";
 
 export const Home = () => {
-    const dispatch = useDispatch();
+   
     const { movies } = useSelector(state => state.reducer)
     
-    useEffect(() => {
-        dispatch(loadMovies())
-    },[])
+    
 
   return (
-    <div>
-        <h1>Welcome to Movies!!!!!</h1>
-
-        <div>
+    <div className='movies-container'>
+        <h1 className='movies-title'>Welcome to Movies</h1>
+        <hr />
+        <div className='cards-container'>
             {
                 movies.map((movie, i) => (
-                    <div>
-                        <h1>{ movie.title }</h1>
-                        <h4>{ movie.year }</h4>
-                        <div>
-                            <img src={movie.img} alt="" />
-                        </div>
-                    </div>
+                    <Card 
+                        key={ i }
+                        { ...movie }
+                    />
                 ))
             }
         </div>
