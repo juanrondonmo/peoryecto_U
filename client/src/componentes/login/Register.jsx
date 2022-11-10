@@ -1,5 +1,5 @@
 import React, {  useState } from 'react'
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth"
 import { auth } from '../../firebase/index';
 import { Link } from 'react-router-dom'
@@ -16,7 +16,7 @@ export const Register = ({switchForm, setSwitchForm}) => {
     const [emailError, setEmailError] = useState(true)
     const [passwordError, setPasswordError] = useState(true)
     const [registerError, setRegisterError] = useState(false)
-    // const navigate = useNavigate()
+    const navigate = useNavigate()
     // const dispatch = useAppDispatch()
     const { name, lastName, email, password } = userRegister
 
@@ -28,7 +28,7 @@ export const Register = ({switchForm, setSwitchForm}) => {
             updateProfile(user,{
                 displayName:name
             })
-            // navigate("/home")
+            navigate("/home")
             // dispatch(handleModal())
             // dispatch(allowAccess(user.displayName))
             setSwitchForm(false)
@@ -67,7 +67,7 @@ export const Register = ({switchForm, setSwitchForm}) => {
         <form onSubmit={handleSubmit} className={styles.form}>
             <legend>Register</legend>
                 {
-                    registerError && <p className={styles.form__validation__text}>Email already in use</p>
+                    // registerError && <p className={styles.form__validation__text}>Email already in use</p>
                 }
             <div className={styles.form__input}>
                 <label htmlFor="username">Name:</label>
