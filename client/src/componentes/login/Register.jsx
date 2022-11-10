@@ -17,7 +17,6 @@ export const Register = ({switchForm, setSwitchForm}) => {
     const [passwordError, setPasswordError] = useState(true)
     const [registerError, setRegisterError] = useState(false)
     const navigate = useNavigate()
-    // const dispatch = useAppDispatch()
     const { name, lastName, email, password } = userRegister
 
   
@@ -30,8 +29,6 @@ export const Register = ({switchForm, setSwitchForm}) => {
             })
             console.log("user", user)
             navigate("/home")
-            // dispatch(handleModal())
-            // dispatch(allowAccess(user.displayName))
             setSwitchForm(false)
         } catch (error) {
             console.log(error)
@@ -59,17 +56,12 @@ export const Register = ({switchForm, setSwitchForm}) => {
 
         setUserRegister(prev => ({...prev, [e.target.name]:e.target.value}))}
 
-    const switchFormComponent = () => {
-        setSwitchForm(!switchForm)
-      }
  
 
   return (
         <form onSubmit={handleSubmit} className={styles.form}>
             <legend>Register</legend>
-                {
-                    // registerError && <p className={styles.form__validation__text}>Email already in use</p>
-                }
+               
             <div className={styles.form__input}>
                 <label htmlFor="username">Name:</label>
                 <input id="username" type="text" name="name" value={name} onChange={handleInputChange} required/>
@@ -82,7 +74,7 @@ export const Register = ({switchForm, setSwitchForm}) => {
                 <label htmlFor="">Email:</label>
                 <input type="email" name="email" value={email} onChange={handleInputChange}/>
                 {
-                    !emailError && <small style={{color:"red", fontSize:"1.4rem"}}>Enter a valid email</small>
+                    !emailError && <small style={{color:"red", fontSize:"1.4rem"}}>Ingresa un email valido</small>
                 }
             </div>
             <div className={styles.form__input}>
@@ -90,11 +82,11 @@ export const Register = ({switchForm, setSwitchForm}) => {
                 <input type="password" name="password" value={password} onChange={handleInputChange}/>{
                     !passwordError && 
                     (<ul className={styles.form__validation__text}>
-                        <li>Must have at least 8 characters</li>
-                        <li>It must includes at least 1 uppercase letter</li>
-                        <li>It must includes at least 1 lowercase letter</li>
-                        <li>It must includes at least 1 number letter</li>
-                        <li>It must includes at least 1 special character (@$!%*?&#/=._) letter</li>
+                        <li>Debe tener 8 caracteres</li>
+                        <li>Debe incluir una mayuscula</li>
+                        <li>Debe incluir una minuscula</li>
+                        <li>Debe incluir un numero</li>
+                        <li>Debe incluir un caracter especial (@$!%*?&#/=._)</li>
                     </ul>)
                 }  
             </div>

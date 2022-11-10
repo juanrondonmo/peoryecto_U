@@ -1,9 +1,7 @@
-import logo from './logo.svg';
+
 import './App.css';
 
-import { Navegacion } from './componentes/navegacion/navegacion';
-import { Login } from './componentes/login/login';
-import { Register } from './componentes/login/Register';
+
 import { AppRouter } from './router/AppRouter';
 import { useDispatch } from 'react-redux';
 import { loadMovies } from './redux/userSlice';

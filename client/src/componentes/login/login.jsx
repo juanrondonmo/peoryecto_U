@@ -30,7 +30,6 @@ export const Login = ({switchForm, setSwitchForm}) => {
       console.log("user", user)
       dispatch(allowAccess(user.displayName))
       navigate("/home")
-      // dispatch(handleModal())
     } catch (error) {
       console.log(error)
       setLoginError(true)
@@ -40,11 +39,6 @@ export const Login = ({switchForm, setSwitchForm}) => {
       password:""
     })
   }
-
-  const switchFormComponent = () => {
-    // setSwitchForm(!switchForm)
-  }
-  
 
 
   return (
