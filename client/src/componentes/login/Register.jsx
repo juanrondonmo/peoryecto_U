@@ -28,6 +28,7 @@ export const Register = ({switchForm, setSwitchForm}) => {
             updateProfile(user,{
                 displayName:name
             })
+            console.log("user", user)
             navigate("/home")
             // dispatch(handleModal())
             // dispatch(allowAccess(user.displayName))

@@ -8,7 +8,6 @@ export const Home = () => {
    
     const { movies } = useSelector(state => state.reducer)
     
-    
 
   return (
     <div className='movies-container'>
